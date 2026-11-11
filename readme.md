@@ -168,7 +168,5 @@ JOIN medicos m ON c.id_medico = m.id_medico;
 
 ---
 
-## Autores
-
-- **Equipe de DBAs Júniores - Consultoria de TI**
-- **Projeto Integrador de SGBD - Hospital Geral Vida & Saúde**
+## Autora
+- Isabella Chaves
