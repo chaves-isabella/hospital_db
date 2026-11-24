@@ -14,10 +14,14 @@ JOIN pacientes p ON i.id_paciente = p.id_paciente
 JOIN quartos q ON i.id_quarto = q.id_quarto;
 
 -- 3. Listagem para a recepção (todos os pacientes, mesmo sem consulta)
-SELECT p.nome_paciente, p.convenio, m.nome_medico, m.especialidade
-FROM pacientes p
-LEFT JOIN consultas c ON c.id_paciente = p.id_paciente
-LEFT JOIN medicos m ON c.id_medico = m.id_medico;
+SELECT 
+    p.nome_paciente,
+    p.convenio,
+    m.nome_medico,
+    m.especialidade
+FROM consultas c
+JOIN pacientes p ON c.id_paciente = p.id_paciente
+JOIN medicos m ON c.id_medico = m.id_medico;
 
 -- 4. Prescrições para a coordenação médica
 SELECT m.nome_medico, m.especialidade, p.nome_paciente, pr.medicamento
